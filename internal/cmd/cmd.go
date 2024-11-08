@@ -1,5 +1,5 @@
-// Package cli implements miniprompt's command line interface.
-package cli
+// Package cmd implements miniprompt's command line interface.
+package cmd
 
 import (
 	"context"

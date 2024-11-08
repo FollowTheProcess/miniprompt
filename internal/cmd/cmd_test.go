@@ -1,11 +1,11 @@
-package cli_test
+package cmd_test
 
 import (
 	"bytes"
 	"context"
 	"testing"
 
-	"github.com/FollowTheProcess/miniprompt/internal/cli"
+	"github.com/FollowTheProcess/miniprompt/internal/cmd"
 	"github.com/FollowTheProcess/test"
 )
 
@@ -15,7 +15,7 @@ func TestSmoke(t *testing.T) {
 
 	args := []string{"prompt"}
 
-	cmd, err := cli.Build(context.Background(), stdout, stderr, args)
+	cmd, err := cmd.Build(context.Background(), stdout, stderr, args)
 	test.Ok(t, err) // Command failed to build
 
 	err = cmd.Execute()

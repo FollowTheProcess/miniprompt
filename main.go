@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/FollowTheProcess/miniprompt/internal/cli"
+	"github.com/FollowTheProcess/miniprompt/internal/cmd"
 	"github.com/FollowTheProcess/msg"
 )
 
@@ -17,7 +17,7 @@ func main() {
 }
 
 func run() error {
-	cmd, err := cli.Build(context.Background(), os.Stdout, os.Stderr, os.Args)
+	cmd, err := cmd.Build(context.Background(), os.Stdout, os.Stderr, os.Args)
 	if err != nil {
 		return fmt.Errorf("could not build miniprompt CLI: %w", err)
 	}
