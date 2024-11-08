@@ -17,7 +17,11 @@ func main() {
 }
 
 func run() error {
-	cmd, err := cmd.Build(context.Background(), os.Stdout, os.Stderr, os.Args[1:])
+	executionContext, err := cmd.Context()
+	if err != nil {
+		return err
+	}
+	cmd, err := cmd.Build(context.Background(), executionContext)
 	if err != nil {
 		return fmt.Errorf("could not build miniprompt CLI: %w", err)
 	}
