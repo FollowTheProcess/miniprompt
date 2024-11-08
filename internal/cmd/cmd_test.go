@@ -20,4 +20,6 @@ func TestSmoke(t *testing.T) {
 
 	err = cmd.Execute()
 	test.Ok(t, err) // Command should not error
+
+	test.Equal(t, stdout.String(), "prompt showy showy\n")
 }

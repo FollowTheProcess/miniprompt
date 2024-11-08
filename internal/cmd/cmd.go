@@ -22,7 +22,7 @@ func Build(ctx context.Context, stdout, stderr io.Writer, args []string) (*cli.C
 			"prompt",
 			cli.Short("Show the prompt"),
 			cli.Run(func(cmd *cli.Command, args []string) error {
-				fmt.Println("prompt showy showy")
+				fmt.Fprintln(cmd.Stdout(), "prompt showy showy")
 				return nil
 			}),
 		)
